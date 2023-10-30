@@ -24,10 +24,10 @@ vars:
   deployment_name: slurm-gcp-v5
   region: us-central1
   zone: us-central1-a
-  zones:
-  - us-central1-a
-  - us-central1-b
-  - us-central1-c
+  # zones:
+  # - us-central1-a
+  # - us-central1-b
+  # - us-central1-c
   instance_image:
     # Please refer to the following link for the latest images:
     # https://github.com/SchedMD/slurm-gcp/blob/master/docs/images.md#supported-operating-systems
