@@ -20,7 +20,7 @@
 ---
 blueprint_name: hpc-slurm-ubuntu2004
 vars:
-  project_id:  hacman
+  project_id:  bentest-403619
   deployment_name: slurm-gcp-v5
   region: us-central1
   zone: us-central1-a
@@ -101,6 +101,7 @@ deployment_groups:
     - v100_preemptible_node_group
     settings:
       partition_name: v100p
+      enable_placement: false # the default is: true
   - id: g2_node_group
     source: community/modules/compute/schedmd-slurm-gcp-v5-node-group
     settings:
@@ -129,6 +130,7 @@ deployment_groups:
     - a2_node_group
     settings:
       partition_name: a2
+      enable_placement: false # the default is: true
   - id: slurm_controller
     source: community/modules/scheduler/schedmd-slurm-gcp-v5-controller
     use:

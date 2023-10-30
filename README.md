@@ -29,10 +29,10 @@ sudo sh cuda_11.8.0_520.61.05_linux.run
 export PATH=/usr/local/cuda-11.8/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
 # non-root
-sh cuda_11.8.0_520.61.05_linux.run --silent --override --toolkit --toolkitpath=~/cuda-toolkit-11.8
+sh cuda_11.8.0_520.61.05_linux.run --silent --override --toolkit --toolkitpath=~/.cuda-toolkit-11.8
 # cuda
-export PATH=/home/bowenj_andrew_cmu_edu/cuda-toolkit-11.8/bin:$PATH
-export LD_LIBRARY_PATH=/home/bowenj_andrew_cmu_edu/cuda-toolkit-11.8/lib64:$LD_LIBRARY_PATH
+export PATH=$HOME/.cuda-toolkit-11.8/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/.cuda-toolkit-11.8/lib64:$LD_LIBRARY_PATH
 ```
 ## Adding miniconda
 ```
@@ -77,4 +77,38 @@ terraform -chdir=slurm-gcp-v5/primary destroy -auto-approve
 ## Copying files to the cluster
 ```
 gcloud compute scp --recurse ~/Projects/hacman_cleanup slurmgcpv5-login-jqutpgkq-001:/home/bowenj_andrew_cmu_edu/Projects
+```
+
+
+## Install
+
+```
+sudo apt-get update && sudo apt-get install -y --no-install-recommends \
+    bash-completion \
+    build-essential \
+    ca-certificates \
+    cmake \
+    curl \
+    git \
+    htop \
+    libegl1 \
+    libxext6 \
+    libjpeg-dev \
+    libpng-dev  \
+    libvulkan1 \
+    rsync \
+    tmux \
+    unzip \
+    vim \
+    vulkan-utils \
+    wget \
+    xvfb \
+    libgl1-mesa-dev \
+    libgl1-mesa-glx \
+    libglew-dev \
+    libosmesa6-dev \
+    software-properties-common \
+    net-tools \
+    xpra \
+    xserver-xorg-dev
 ```
